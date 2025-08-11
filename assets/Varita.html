@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vithita Animation - วิธิตา แอนิเมชั่น</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --accent-color: #f093fb;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: var(--primary-color) !important;
+        }
+
+        .nav-link {
+            color: var(--dark-color) !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+            transform: translateY(-2px);
+        }
+
+        .main-content {
+            margin-top: 100px;
+            padding: 2rem 0;
+        }
+
+        .company-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .company-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .company-logo {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .company-logo i {
+            font-size: 3rem;
+            color: white;
+        }
+
+        .company-title {
+            color: var(--dark-color);
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .position-tag {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: inline-block;
+            margin: 1rem 0;
+        }
+
+        .work-hours {
+            background: rgba(102, 126, 234, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .section-title {
+            color: var(--dark-color);
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 2.5rem 0 1.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            border-radius: 2px;
+        }
+
+        .job-description {
+            background: rgba(240, 147, 251, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 1.5rem 0;
+        }
+
+        .job-description ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .job-description li {
+            margin: 0.8rem 0;
+            position: relative;
+        }
+
+        .job-description li::marker {
+            color: var(--primary-color);
+        }
+
+        .requirements {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 1.5rem 0;
+        }
+
+        .requirements ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .requirements li {
+            margin: 1rem 0;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, var(--dark-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+
+        .contact-info {
+            margin: 1.5rem 0;
+        }
+
+        .contact-info i {
+            color: var(--accent-color);
+            margin-right: 1rem;
+            width: 20px;
+        }
+
+        .email-btn {
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(240, 147, 251, 0.3);
+        }
+
+        .email-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(240, 147, 251, 0.4);
+            color: white;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .company-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .company-title {
+                font-size: 2rem;
+            }
+            
+            .position-tag {
+                padding: 0.6rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-code"></i> Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">หน้าแรก</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">เกี่ยวกับฉัน</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="assets/PortfolioMe.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">ติดต่อ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="company-card">
+                        <!-- Company Header -->
+                        <div class="company-header">
+                            <div class="company-logo">
+                                <img
+              src="../Vithita Animation.png"
+              alt="Profile Picture"
+              class="profile-img"
+            />
+                            </div>
+                            <h1 class="company-title">Vithita Animation</h1>
+                            <p class="lead text-muted">วิธิตา แอนิเมชั่น</p>
+                            
+                            <div class="position-tag">
+                                <i class="fas fa-user-graduate me-2"></i>
+                                นักศึกษาฝึกงาน / สหกิจ Editor
+                            </div>
+
+                            <div class="work-hours">
+                                <i class="fas fa-clock text-primary me-2"></i>
+                                <strong>เวลาทำงาน:</strong> จันทร์–ศุกร์ 09:00–18:00
+                            </div>
+                        </div>
+
+                        <!-- Job Description -->
+                        <div class="section-title">รายละเอียดฝึกงาน / สหกิจ</div>
+                        <div class="job-description">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-edit text-primary me-2"></i> ตัดต่อคลิป, ถ่ายคลิป, ถ่ายภาพ, ออกแบบงานกราฟฟิค สำหรับสื่อออนไลน์ต่างๆ</li>
+                                <li><i class="fas fa-search text-primary me-2"></i> หาภาพและคลิปประกอบเนื้อหา</li>
+                                <li><i class="fas fa-tasks text-primary me-2"></i> งานอื่นๆ ตามที่ได้รับมอบหมาย</li>
+                            </ul>
+                        </div>
+
+                        <!-- Requirements -->
+                        <div class="section-title">คุณสมบัติผู้สมัคร</div>
+                        <div class="requirements">
+                            <ul>
+                                <li><strong>การศึกษา:</strong> กำลังเรียนด้าน เทคโนโลยีสื่อดิจิทัล, มัลติมีเดีย, เทคโนโลยีการศึกษา, นิเทศศาสตร์, ภาพยนตร์, คอมพิวเตอร์ธุรกิจ หรือสาขาอื่นๆ ที่เกี่ยวข้อง</li>
+                                
+                                <li><strong>ทักษะที่ต้องการ:</strong> 
+                                    <span class="highlight">Canva</span>, 
+                                    <span class="highlight">Microsoft Office</span>, 
+                                    <span class="highlight">Adobe After Effects</span>, 
+                                    <span class="highlight">Adobe Premiere Pro</span>, 
+                                    <span class="highlight">Video Editor</span>
+                                </li>
+                                
+                                <li><strong>อุปกรณ์:</strong> มี Notebook/อุปกรณ์ในการออกแบบ, ตัดต่อคลิป, ถ่ายภาพ, ถ่ายวิดีโอ เป็นของตนเอง</li>
+                                
+                                <li><strong>บุคลิกภาพ:</strong> เป็นคนสร้างสรรค์ ตรงเวลา กระตือรือร้น มีทักษะการสื่อสารที่ดี มีมารยาท และชอบทำงานเป็นทีม</li>
+                            </ul>
+                        </div>
+
+                        <!-- Application Process -->
+                        <div class="section-title">วิธีการสมัคร</div>
+                        <div class="job-description">
+                            <p><strong>ส่งเอกสารสมัครได้ที่:</strong> <span class="highlight">contact@vithita.com</span></p>
+                            
+                            <p><strong>เอกสารที่ต้องส่ง:</strong></p>
+                            <ul>
+                                <li>ระบุชื่อ-สกุล / ตำแหน่งที่สนใจ / ระยะเวลาการฝึกงาน/สหกิจ ให้ชัดเจน</li>
+                                <li>แนบ Resume + ผลงาน (ถ้ามี)</li>
+                                <li>รูปถ่ายตนเอง หน้าตรงชัดเจน</li>
+                            </ul>
+                            
+                            <p><strong>หัวข้ออีเมล:</strong> "สมัครฝึกงาน" หรือ "สมัครสหกิจศึกษา"</p>
+                        </div>
+
+                        <!-- Contact Section -->
+                        <div class="contact-section">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h3 class="mb-3">ข้อมูลบริษัท & ติดต่อ</h3>
+                                    
+                                    <div class="contact-info">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <strong>ที่อยู่:</strong> 955 ซอยสุทธิพร ถนนประชาสงเคราะห์ ดินแดง เขตดินแดง กรุงเทพมหานคร 10400
+                                    </div>
+                                    
+                                    <div class="contact-info">
+                                        <i class="fas fa-phone"></i>
+                                        <strong>โทรศัพท์:</strong> 02 641 9400
+                                    </div>
+                                    
+                                    <div class="contact-info">
+                                        <i class="fas fa-envelope"></i>
+                                        <strong>อีเมล:</strong> contact@vithita.com
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-4 text-center">
+                                    <h4 class="mb-3">สมัครงานเลย!</h4>
+                                    <a href="mailto:contact@vithita.com?subject=สมัครฝึกงาน&body=สวัสดีครับ/ค่ะ%0A%0Aชื่อ-สกุล: %0Aตำแหน่งที่สนใจ: นักศึกษาฝึกงาน/สหกิจ Editor%0Aระยะเวลาการฝึกงาน: %0A%0Aขอบคุณครับ/ค่ะ" 
+                                       class="btn email-btn">
+                                        <i class="fas fa-paper-plane me-2"></i>
+                                        ส่งใบสมัคร
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

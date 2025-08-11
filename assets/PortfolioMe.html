@@ -140,23 +140,37 @@
             border-left: 5px solid #4facfe;
         }
         
-        .print-btn {
+        .fixed-buttons {
             position: fixed;
             top: 20px;
             right: 20px;
             z-index: 1000;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+        
+        .print-btn, .home-btn {
+            display: block;
+            width: 100%;
             border: none;
             color: white;
             padding: 12px 20px;
             border-radius: 25px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             transition: all 0.3s ease;
+            margin-bottom: 10px;
         }
         
-        .print-btn:hover {
+        .print-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+        
+        .home-btn {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+        
+        .print-btn:hover, .home-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            color: white;
         }
         
         .chart-container {
@@ -178,22 +192,31 @@
         @media print {
             body { background: white !important; }
             .portfolio-container { box-shadow: none !important; margin: 0 !important; }
-            .print-btn { display: none !important; }
+            .fixed-buttons { display: none !important; }
             .header-section::before { display: none !important; }
         }
     </style>
 </head>
 <body>
-    <button class="btn print-btn" onclick="window.print()">
-        <i class="fas fa-print"></i> พิมพ์ PDF
-    </button>
+    <div class="fixed-buttons">
+        <button class="btn print-btn" onclick="window.print()">
+            <i class="fas fa-print"></i> พิมพ์ PDF
+        </button>
+        <button class="btn home-btn" onclick="window.history.back()">
+            <i class="fas fa-home"></i> กลับหน้าหลัก
+        </button>
+    </div>
 
     <div class="container-fluid">
         <div class="portfolio-container">
             <!-- Header Section -->
             <div class="header-section text-center">
-                <div class="profile-img">
-                    <i class="fas fa-user"></i>
+                <div class="">
+                    <img
+              src="../Aisun.jpg"
+              alt="Profile Picture"
+              class="profile-img"
+            />
                 </div>
                 <h1 class="mb-0">นายไอศูรย์ ตั้งประเสริฐ</h1>
                 <h3 class="mb-3">Aisun Tungprasert</h3>
