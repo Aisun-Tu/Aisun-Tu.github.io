@@ -1,135 +1,226 @@
 <!DOCTYPE html>
 <html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - ไอศูรย์ ดั่งประเสริฐ</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">ไอศูรย์ Portfolio</div>
-            <ul class="nav-links">
-                <li><a href="#home">หน้าแรก</a></li>
-                <li><a href="#about">เกี่ยวกับ</a></li>
-                <li><a href="#skills">ทักษะ</a></li>
-                <li><a href="#contact">ติดต่อ</a></li>
-            </ul>
-            <button class="mobile-menu">☰</button>
-        </nav>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - นายไอศูรย์ ตั้งประเสริฐ</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><i class="fas fa-code"></i> Portfolio</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">หน้าแรก</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">เกี่ยวกับฉัน</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="assets/PortfolioMe.html">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">ติดต่อ</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content fade-in-up">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='90' fill='%234ecdc4' stroke='white' stroke-width='4'/%3E%3Ctext x='100' y='110' text-anchor='middle' fill='white' font-size='24' font-family='Arial'%3Eไอศูรย์%3C/text%3E%3C/svg%3E" alt="ไอศูรย์ ดั่งประเสริฐ" class="profile-image">
-            
-            <h1>ไอศูรย์ ดั่งประเสริฐ</h1>
-            <h2>นักพัฒนาเว็บไซต์และแอปพลิเคชัน</h2>
-            <p>วิทยาลัยเทคนิคภาคศิลป์ | อายุ 25 ปี | สัญชาติไทย</p>
-            
-            <div class="portfolio-buttons">
-                <a href="#" class="portfolio-btn" onclick="alert('Portfolio สำหรับ Tech Company จะเปิดเร็วๆ นี้!')">
-                    <div class="btn-icon">💻</div>
-                    <h3>Tech Company</h3>
-                    <p>Portfolio สำหรับบริษัทเทคโนโลยี เน้นทักษะการเขียนโปรแกรมและการพัฒนาเว็บไซต์</p>
-                </a>
-                
-                <a href="#" class="portfolio-btn" onclick="alert('Portfolio สำหรับ Creative Agency จะเปิดเร็วๆ นี้!')">
-                    <div class="btn-icon">🎨</div>
-                    <h3>Creative Agency</h3>
-                    <p>Portfolio สำหรับเอเจนซี่โฆษณา เน้นงานสร้างสรรค์และการออกแบบ</p>
-                </a>
-                
-                <a href="#" class="portfolio-btn" onclick="alert('Portfolio สำหรับ Startup จะเปิดเร็วๆ นี้!')">
-                    <div class="btn-icon">🚀</div>
-                    <h3>Startup</h3>
-                    <p>Portfolio สำหรับสตาร์ทอัพ เน้นความยืดหยุ่นและการเรียนรู้สิ่งใหม่</p>
-                </a>
-            </div>
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <img
+              src="Aisun.jpg"
+              alt="Profile Picture"
+              class="profile-img"
+            />
+            <h1 class="display-4 fw-bold mb-3">
+              สวัสดีครับ <span class="wave">👋</span>
+            </h1>
+            <h2 class="h3 mb-4" style="color: #ffd700">
+              ผม นายไอศูรย์ ตั้งประเสริฐ
+            </h2>
+            <p class="intro-text">
+              นักพัฒนาเว็บไซต์และออกแบบ 3D มีความรู้ด้าน เขียน Web, ทำออกแบบ 3D,
+              ออกแบบ Game, เขียน Code, ตัดต่อวิดีโอ, ทำกราฟฟิค
+              และมีความรู้ด้านการใช้ AI
+            </p>
+          </div>
         </div>
+
+        <!-- Skills Section -->
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="skills-section">
+              <h3 class="mb-4"><i class="fas fa-tools"></i> Skills & Tools</h3>
+              <div class="text-center">
+                <span class="skill-badge">HTML</span>
+                <span class="skill-badge">PHP</span>
+                <span class="skill-badge">CSS</span>
+                <span class="skill-badge">MySQL</span>
+                <span class="skill-badge">Unity</span>
+                <span class="skill-badge">Blender</span>
+                <span class="skill-badge">Docker</span>
+                <span class="skill-badge">Java</span>
+                <span class="skill-badge">AI Tools</span>
+                <span class="skill-badge">Video Editing</span>
+                <span class="skill-badge">Graphic Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <div class="skills-container">
-            <h2 class="scroll-animate">ทักษะและความสามารถ</h2>
-            <div class="skills-grid">
-                <div class="skill-item scroll-animate">
-                    <div class="skill-name">การเขียนโค้ด</div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 70%"></div>
-                    </div>
-                </div>
-                <div class="skill-item scroll-animate">
-                    <div class="skill-name">กราฟิก/มัลติมีเดีย</div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 80%"></div>
-                    </div>
-                </div>
-                <div class="skill-item scroll-animate">
-                    <div class="skill-name">การออกแบบเว็บไซต์</div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 63%"></div>
-                    </div>
-                </div>
-                <div class="skill-item scroll-animate">
-                    <div class="skill-name">อาร์ดิวโน่/ซ่อมคอม</div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 60%"></div>
-                    </div>
-                </div>
-                <div class="skill-item scroll-animate">
-                    <div class="skill-name">ระบบเครือข่าย</div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 40%"></div>
-                    </div>
-                </div>
-                <div class="skill-item scroll-animate">
-                    <div class="skill-name">การจัดการฐานข้อมูล</div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 55%"></div>
-                    </div>
-                </div>
-            </div>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-buttons">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold text-white">
+            <i class="fas fa-briefcase"></i> Portfolio สำหรับบริษัทเป้าหมาย
+          </h2>
+          <p class="text-white">เลือกดู Portfolio ตามบริษัทที่สนใจ</p>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2>ติดต่อฉัน</h2>
-        <p>พร้อมที่จะร่วมงานกับทีมของคุณ</p>
-        <div class="contact-info">
-            <div class="contact-item">
-                📱 <a href="tel:0959161101">095-916-1101</a>
-            </div>
-            <div class="contact-item">
-                ✉️ <a href="mailto:aisun097@gmail.com">aisun097@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                📍 หนึ่ง, มหาสารคาม
-            </div>
+        <div class="row">
+          <!-- Vithita Animation -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <a href="#vithita" class="portfolio-card">
+              <div class="company-icon">
+                <i class="fas fa-video"></i>
+              </div>
+              <h4 class="company-name">Vithita Animation</h4>
+              <p class="position-title">นักศึกษาฝึกงาน / สหกิจ Editor</p>
+              <p class="mb-3">
+                ตัดต่อคลิป, ถ่ายคลิป, ถ่ายภาพ, ออกแบบงานกราฟฟิค
+                สำหรับสื่อออนไลน์ต่างๆ
+              </p>
+              <div class="text-end">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </a>
+          </div>
+
+          <!-- Appsolute -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <a href="#appsolute" class="portfolio-card">
+              <div class="company-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h4 class="company-name">Appsolute (ขอนแก่น)</h4>
+              <p class="position-title">นักศึกษาฝึกงาน Software Developer</p>
+              <p class="mb-3">
+                บริษัทพัฒนา Mobile Application และ Web Application
+                ที่มีสำนักงานใหญ่ในขอนแก่น
+              </p>
+              <div class="text-end">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </a>
+          </div>
+
+          <!-- Digic Technology -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <a href="#digic" class="portfolio-card">
+              <div class="company-icon">
+                <i class="fas fa-globe"></i>
+              </div>
+              <h4 class="company-name">บริษัท ดิจิค เทคโนโลยี จำกัด</h4>
+              <p class="position-title">นักศึกษาฝึกงาน Web Developer</p>
+              <p class="mb-3">
+                บริษัทรับทำเว็บไซต์ที่มีสำนักงานอยู่ที่ขอนแก่น
+                เปิดรับนักศึกษาฝึกงาน
+              </p>
+              <div class="text-end">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </a>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="#" title="Facebook">📘</a>
-                <a href="#" title="YouTube">📺</a>
-                <a href="#" title="TikTok">🎵</a>
-                <a href="#" title="Line">💬</a>
-                <a href="#" title="Twitter">🐦</a>
-                <a href="#" title="Discord">🎮</a>
+    <footer id="contact" class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h3 class="mb-4"><i class="fas fa-envelope"></i> ติดต่อฉัน</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="contact-item justify-content-center">
+                  <i class="fas fa-envelope"></i>
+                  <a href="mailto:aisun095@gmail.com">aisun095@gmail.com</a>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="contact-item justify-content-center">
+                  <i class="fas fa-phone"></i>
+                  <a href="tel:0959161101">095-916-1101</a>
+                </div>
+              </div>
             </div>
-            <p>&copy; 2025 ไอศูรย์ ดั่งประเสริฐ. สงวนลิขสิทธิ์.</p>
-            <p>ออกแบบและพัฒนาด้วย ❤️</p>
+            <div class="row mt-3">
+              <div class="col-md-6">
+                <div class="contact-item justify-content-center">
+                  <i class="fab fa-github"></i>
+                  <a href="https://github.com/Aisun-Tu" target="_blank"
+                    >GitHub Profile</a
+                  >
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="contact-item justify-content-center">
+                  <i class="fab fa-facebook"></i>
+                  <a
+                    href="https://www.facebook.com/aisun.tungprasert/?locale=th_TH"
+                    target="_blank"
+                    >Facebook Profile</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        <hr class="my-4" style="border-color: rgba(255, 255, 255, 0.2)" />
+        <div class="text-center">
+          <p>&copy; 2025 นายไอศูรย์ ตั้งประเสริฐ. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
-    <script src="script.js"></script>
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aisun Tungprasert - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .portfolio-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin: 20px;
+            overflow: hidden;
+        }
+        
+        .header-section {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23ffffff" opacity="0.1"/><circle cx="20" cy="30" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="80" cy="70" r="1.5" fill="%23ffffff" opacity="0.1"/></svg>');
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translateX(0) translateY(0) rotate(0deg); }
+            100% { transform: translateX(-100px) translateY(-100px) rotate(360deg); }
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid rgba(255,255,255,0.3);
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            margin: 0 auto 20px;
+        }
+        
+        .section-title {
+            position: relative;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 10px;
+            transition: width 2s ease-in-out;
+            animation: fillSkill 2s ease-in-out;
+        }
+        
+        @keyframes fillSkill {
+            from { width: 0; }
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 2px;
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .education-card {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #4facfe;
+        }
+        
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: none;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .chart-container {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .progress-ring {
+            transform: rotate(-90deg);
+        }
+        
+        .progress-ring-circle {
+            transition: stroke-dasharray 0.35s;
+        }
+        
+        @media print {
+            body { background: white !important; }
+            .portfolio-container { box-shadow: none !important; margin: 0 !important; }
+            .print-btn { display: none !important; }
+            .header-section::before { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <button class="btn print-btn" onclick="window.print()">
+        <i class="fas fa-print"></i> พิมพ์ PDF
+    </button>
+
+    <div class="container-fluid">
+        <div class="portfolio-container">
+            <!-- Header Section -->
+            <div class="header-section text-center">
+                <div class="profile-img">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h1 class="mb-0">นายไอศูรย์ ตั้งประเสริฐ</h1>
+                <h3 class="mb-3">Aisun Tungprasert</h3>
+                <p class="lead">นักศึกษาฝึกงาน / สหกิจ Editor</p>
+                <p class="h5">Vithita Animation</p>
+            </div>
+
+            <div class="row g-0">
+                <!-- Left Column -->
+                <div class="col-lg-4 p-4" style="background: #f8f9fa;">
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <h5 class="mb-3"><i class="fas fa-address-card"></i> ข้อมูลติดต่อ</h5>
+                        <p><i class="fas fa-envelope"></i> aisun.tu@ksu.ac.th</p>
+                        <p><i class="fas fa-phone"></i> 095-916-1101</p>
+                        <p><i class="fab fa-github"></i> github.com/Aisun-Tu</p>
+                        <p><i class="fas fa-birthday-cake"></i> 20 กันยายน 2544 (อายุ 25 ปี)</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 54/3 บ.หนองสอ ต.ลำปาว อ.เมือง กาฬสินธุ์ จ.กาฬสินธุ์ 46000</p>
+                    </div>
+
+                    <!-- Personal Info Chart -->
+                    <div class="chart-container">
+                        <h5 class="section-title">ข้อมูลส่วนตัว</h5>
+                        <div class="row text-center">
+                            <div class="col-6 mb-3">
+                                <div class="progress-circle">
+                                    <i class="fas fa-flag text-primary fs-2"></i>
+                                    <p class="mt-2 mb-0"><strong>เชื้อชาติ</strong></p>
+                                    <small>ไทย</small>
+                                </div>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <div class="progress-circle">
+                                    <i class="fas fa-passport text-success fs-2"></i>
+                                    <p class="mt-2 mb-0"><strong>สัญชาติ</strong></p>
+                                    <small>ไทย</small>
+                                </div>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <div class="progress-circle">
+                                    <i class="fas fa-pray text-warning fs-2"></i>
+                                    <p class="mt-2 mb-0"><strong>ศาสนา</strong></p>
+                                    <small>พุทธ</small>
+                                </div>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <div class="progress-circle">
+                                    <i class="fas fa-user-tag text-info fs-2"></i>
+                                    <p class="mt-2 mb-0"><strong>ชื่อเล่น</strong></p>
+                                    <small>หนึ่ง</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills Chart -->
+                    <div class="chart-container">
+                        <h5 class="section-title">ทักษะหลัก</h5>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>HTML5/CSS</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>JavaScript</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>PHP</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>C#/C++</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Language Skills -->
+                    <div class="chart-container">
+                        <h5 class="section-title">ทักษะภาษา</h5>
+                        <div class="row text-center">
+                            <div class="col-6">
+                                <div class="progress-circle mb-3">
+                                    <svg width="80" height="80">
+                                        <circle cx="40" cy="40" r="35" stroke="#e9ecef" stroke-width="8" fill="none"></circle>
+                                        <circle cx="40" cy="40" r="35" stroke="#667eea" stroke-width="8" fill="none" 
+                                                stroke-dasharray="220" stroke-dashoffset="22" class="progress-ring-circle"></circle>
+                                    </svg>
+                                    <p class="mt-2 mb-0"><strong>ไทย</strong></p>
+                                    <small>ดีมาก</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="progress-circle mb-3">
+                                    <svg width="80" height="80">
+                                        <circle cx="40" cy="40" r="35" stroke="#e9ecef" stroke-width="8" fill="none"></circle>
+                                        <circle cx="40" cy="40" r="35" stroke="#764ba2" stroke-width="8" fill="none" 
+                                                stroke-dasharray="220" stroke-dashoffset="110" class="progress-ring-circle"></circle>
+                                    </svg>
+                                    <p class="mt-2 mb-0"><strong>อังกฤษ</strong></p>
+                                    <small>พอใช้</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="col-lg-8 p-4">
+                    <!-- Internship Details -->
+                    <div class="project-card">
+                        <h3 class="text-primary mb-3">รายละเอียดฝึกงาน / สหกิจ</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-video text-primary me-2"></i> ตัดต่อคลิป, ถ่ายคลิป, ถ่ายภาพ</li>
+                            <li class="mb-2"><i class="fas fa-palette text-success me-2"></i> ออกแบบงานกราฟฟิคสำหรับสื่อออนไลน์ต่างๆ</li>
+                            <li class="mb-2"><i class="fas fa-search text-warning me-2"></i> หาภาพและคลิปประกอบเนื้อหา</li>
+                            <li class="mb-2"><i class="fas fa-tasks text-info me-2"></i> งานอื่นๆ ตามที่ได้รับมอบหมาย</li>
+                        </ul>
+                    </div>
+
+                    <!-- Projects -->
+                    <h3 class="section-title">โปรเจกต์ที่เกี่ยวข้อง</h3>
+                    
+                    <div class="project-card">
+                        <h4 class="text-primary">Mysteria: Designing and Developing a 3D Puzzle Game</h4>
+                        <h6 class="text-muted">การออกแบบและพัฒนาเกมพัซเซิล 3 มิติ</h6>
+                        <p>ตัวเกมจะเป็นรูปแบบการไขปริศนาเกี่ยวกับความรู้ทางด้านไอที นำเสนอแผนที่มหาวิทยาลัย</p>
+                        <div class="tags">
+                            <span class="tag">Unity</span>
+                            <span class="tag">Blender</span>
+                            <span class="tag">C#</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">VRoidStudio</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h4 class="text-primary">Memories in the Library</h4>
+                        <h6 class="text-muted">แอนิเมชัน ความทรงจำในห้องสมุด</h6>
+                        <p>เป็นแอนิเมชันสั้น โดยจะนำเสนอสื่อออกมาเป็นรูปแบบวิดีโอแอนิเมชัน</p>
+                        <div class="tags">
+                            <span class="tag">ClipStudioPaint</span>
+                            <span class="tag">Procreate</span>
+                            <span class="tag">Blender</span>
+                            <span class="tag">AdobePremierePro</span>
+                            <span class="tag">AdobeAfterEffects</span>
+                            <span class="tag">AdobeAudition</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h4 class="text-primary">Webboard System</h4>
+                        <h6 class="text-muted">ระบบกระดานข่าว</h6>
+                        <p>พัฒนาระบบเว็บบอร์ดเพื่อใช้ในการโพสต์ ตอบถามกัน เพื่อสร้างช่องทางการแลกเปลี่ยนความรู้</p>
+                        <div class="tags">
+                            <span class="tag">MySQL</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">PHP</span>
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <h3 class="section-title">การศึกษา</h3>
+                    
+                    <div class="education-card">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h5 class="text-primary">ปริญญาตรี (กำลังศึกษา)</h5>
+                                <p class="mb-1"><strong>สาขา:</strong> เทคโนโลยีสารสนเทศและดิจิทัล (กลุ่ม Digital Content)</p>
+                                <p class="mb-1"><strong>สถานศึกษา:</strong> มหาวิทยาลัยกาฬสินธุ์</p>
+                                <p class="mb-1"><strong>ปีการศึกษา:</strong> 2565 – ปัจจุบัน</p>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="gpa-circle">
+                                    <h3 class="text-primary">3.22</h3>
+                                    <small>GPA</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education-card">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h5 class="text-primary">ประกาศนียบัตรวิชาชีพชั้นสูง</h5>
+                                <p class="mb-1"><strong>สาขา:</strong> เทคโนโลยีคอมพิวเตอร์</p>
+                                <p class="mb-1"><strong>สถานศึกษา:</strong> มหาวิทยาลัยกาฬสินธุ์</p>
+                                <p class="mb-1"><strong>ปีการศึกษา:</strong> 2562</p>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="gpa-circle">
+                                    <h3 class="text-success">3.77</h3>
+                                    <small>GPA</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools & Interests -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="chart-container">
+                                <h5 class="section-title">เครื่องมือ</h5>
+                                <div class="d-flex flex-wrap">
+                                    <span class="tag">VsCode</span>
+                                    <span class="tag">Docker</span>
+                                    <span class="tag">MySQL</span>
+                                    <span class="tag">Blender</span>
+                                    <span class="tag">Git</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="chart-container">
+                                <h5 class="section-title">ความสนใจ</h5>
+                                <div class="d-flex flex-wrap">
+                                    <span class="tag">Programming</span>
+                                    <span class="tag">Web Development</span>
+                                    <span class="tag">Technical Artist</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Animate skill bars on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 500);
+            });
+        });
+
+        // Print function with custom styling
+        function printResume() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
