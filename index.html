@@ -1,99 +1,166 @@
 <!DOCTYPE html>
 <html lang="th">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio - นายไอศูรย์ ตั้งประเสริฐ</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aisun | Portfolio & Projects</title>
+    <!-- Bootstrap 5 CSS -->
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <style>
+      body {
+        font-family: "Prompt", system-ui, -apple-system, Segoe UI, Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      }
+      .hero-min-h {
+        min-height: 70vh;
+      }
+    </style>
   </head>
-  <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top">
+  <body class="bg-light">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
       <div class="container">
-        <a class="navbar-brand" href="#"
-          ><i class="fas fa-code"></i> Portfolio</a
-        >
+        <a class="navbar-brand fw-bold" href="#">Aisun</a>
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
+          data-bs-target="#nav"
+          aria-controls="nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#home">หน้าแรก</a>
-            </li>
+        <div id="nav" class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
             <li class="nav-item">
               <a class="nav-link" href="#about">เกี่ยวกับฉัน</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="assets/PortfolioMe.html">Portfolio</a>
+              <a class="nav-link" href="#projects">ผลงาน</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#contact">ติดต่อ</a>
+            </li>
+            <li class="nav-item ms-lg-3">
+              <a class="btn btn-primary" href="#projects">ดู Portfolio</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <img src="Aisun.jpg" alt="Profile Picture" 
-            class="profile-img" />
-            <h1 class="display-4 fw-bold mb-3">
-              สวัสดีครับ <span class="wave">👋</span>
+    <!-- HERO -->
+    <header class="bg-white">
+      <div class="container hero-min-h d-flex align-items-center py-5">
+        <div class="row align-items-center g-4 w-100">
+          <div class="col-lg-6">
+            <h1 class="display-5 fw-semibold lh-tight">
+              สวัสดี! ผม <span class="text-primary">Aisun</span>
             </h1>
-            <h2 class="h3 mb-4" style="color: #ffd700">
-              ผม นายไอศูรย์ ตั้งประเสริฐ
-            </h2>
-            <p class="intro-text">
-              นักพัฒนาเว็บไซต์และออกแบบ 3D มีความรู้ด้าน เขียน Web, ทำออกแบบ 3D,
-              ออกแบบ Game, เขียน Code, ตัดต่อวิดีโอ, ทำกราฟฟิค
-              และมีความรู้ด้านการใช้ AI
+            <p class="lead text-secondary mt-3">
+              นักพัฒนาเว็บและนักออกแบบระบบ ที่ชอบทำงานเรียบง่าย ใช้งานสะดวก
+              และประสิทธิภาพดี
             </p>
+            <div class="d-flex gap-2 mt-3">
+              <a class="btn btn-primary btn-lg" href="#projects"
+                >สำรวจ Portfolio</a
+              >
+              <a class="btn btn-outline-secondary btn-lg" href="#contact"
+                >ติดต่อ</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-6 text-center">
+            <img
+              src="Aisun.jpg"
+              alt="Aisun"
+              class="img-fluid rounded-4 shadow-sm"
+            />
           </div>
         </div>
+      </div>
+    </header>
 
-        <!-- Skills Section -->
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
-            <div class="skills-section">
-              <h3 class="mb-4"><i class="fas fa-tools"></i> Skills & Tools</h3>
-              <div class="text-center">
-                <span class="skill-badge">HTML</span>
-                <span class="skill-badge">PHP</span>
-                <span class="skill-badge">CSS</span>
-                <span class="skill-badge">MySQL</span>
-                <span class="skill-badge">Unity</span>
-                <span class="skill-badge">Blender</span>
-                <span class="skill-badge">Docker</span>
-                <span class="skill-badge">Java</span>
-                <span class="skill-badge">AI Tools</span>
-                <span class="skill-badge">Video Editing</span>
-                <span class="skill-badge">Graphic Design</span>
+    <!-- ABOUT -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-5 text-center text-lg-start">
+            <img
+              src="Aisun.jpg"
+              alt="Aisun"
+              class="img-fluid rounded-4 shadow-sm"
+            />
+          </div>
+          <div class="col-lg-7">
+            <h2 class="fw-semibold mb-3">เกี่ยวกับฉัน</h2>
+            <p class="text-secondary mb-4">
+              ผมถนัดในการสร้างเว็บด้วย
+              <strong>Bootstrap 5</strong> และวางโครงสร้างระบบให้ใช้งานง่าย
+              ดูสะอาดสบายตา
+              พร้อมทั้งเชื่อมต่อฐานข้อมูลและสคริปต์ฝั่งเซิร์ฟเวอร์เมื่อต้องการ
+            </p>
+            <div class="row g-3 mb-3">
+              <div class="col-sm-6">
+                <div class="p-3 bg-white border rounded-3 h-100">
+                  <div class="fw-medium">Frontend</div>
+                  <div class="text-secondary small">
+                    Bootstrap 5, HTML, JavaScript
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-white border rounded-3 h-100">
+                  <div class="fw-medium">Backend</div>
+                  <div class="text-secondary small">
+                    PHP, MySQL (พื้นฐานเชื่อมต่อ/ดึงข้อมูล)
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-2">
+              <h5 class="fw-semibold mb-2">Skills &amp; Tools</h5>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge rounded-pill text-bg-light border"
+                  >HTML</span
+                >
+                <span class="badge rounded-pill text-bg-light border">PHP</span>
+                <span class="badge rounded-pill text-bg-light border">CSS</span>
+                <span class="badge rounded-pill text-bg-light border"
+                  >MySQL</span
+                >
+                <span class="badge rounded-pill text-bg-light border"
+                  >Unity</span
+                >
+                <span class="badge rounded-pill text-bg-light border"
+                  >Blender</span
+                >
+                <span class="badge rounded-pill text-bg-light border"
+                  >Docker</span
+                >
+                <span class="badge rounded-pill text-bg-light border"
+                  >Java</span
+                >
+                <span class="badge rounded-pill text-bg-light border"
+                  >AI Tools</span
+                >
+                <span class="badge rounded-pill text-bg-light border"
+                  >Video Editing</span
+                >
+                <span class="badge rounded-pill text-bg-light border"
+                  >Graphic Design</span
+                >
               </div>
             </div>
           </div>
@@ -101,123 +168,201 @@
       </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio-buttons">
+    <!-- PROJECTS -->
+    <section id="projects" class="py-5 bg-white border-top border-bottom">
       <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="display-5 fw-bold text-white">
-            <i class="fas fa-briefcase"></i> Portfolio สำหรับบริษัทเป้าหมาย
-          </h2>
-          <p class="text-white">เลือกดู Portfolio ตามบริษัทที่สนใจ</p>
+        <div class="d-flex align-items-end justify-content-between mb-4">
+          <h2 class="fw-semibold m-0">Portfolio สำหรับบริษัทเป้าหมาย</h2>
         </div>
 
-        <div class="row">
-          <!-- Vithita Animation -->
-          <div class="col-lg-4 col-md-6 mb-4">
-            <a href="assets/Varita.html" class="portfolio-card">
-              <div class="company-icon">
-                <i class="fas fa-video"></i>
+        <div class="row g-4">
+          <!-- Card 4 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <img src="kotchasan.png" class="card-img-top" alt="kotchasan" />
+              <div class="card-body">
+                <h5 class="card-title">kotchasan</h5>
+                <p class="card-text text-secondary">
+                  ผู้พัฒนาโซลูชันดิจิทัลที่เรียบง่าย น่าเชื่อถือ
+                  และขยายต่อได้สำหรับธุรกิจไทย
+                </p>
+                <a href="assets/kotchasan.html" class="btn btn-primary w-100"
+                  >ดูหน้าเพจ</a
+                >
               </div>
-              <h4 class="company-name">Vithita Animation</h4>
-              <p class="position-title">นักศึกษาฝึกงาน / สหกิจ Editor</p>
-              <p class="mb-3">
-                ตัดต่อคลิป, ถ่ายคลิป, ถ่ายภาพ, ออกแบบงานกราฟฟิค
-                สำหรับสื่อออนไลน์ต่างๆ
-              </p>
-              <div class="text-end">
-                <i class="fas fa-arrow-right"></i>
-              </div>
-            </a>
+            </div>
           </div>
-
-          <!-- Appsolute -->
-          <div class="col-lg-4 col-md-6 mb-4">
-            <a href="assets/Appsolute.html" class="portfolio-card">
-              <div class="company-icon">
-                <i class="fas fa-mobile-alt"></i>
+          <!-- Card 1 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <img src="digix.jfif" class="card-img-top" alt="Digix" />
+              <div class="card-body">
+                <h5 class="card-title">Digix</h5>
+                <p class="card-text text-secondary">
+                  หน้าเพจตัวอย่างสำหรับสตูดิโอพัฒนาดิจิทัล
+                  โฟกัสความเรียบง่ายและชัดเจน
+                </p>
+                <a href="assets/digix.html" class="btn btn-primary w-100"
+                  >ดูหน้าเพจ</a
+                >
               </div>
-              <h4 class="company-name">Absolute Management Solutions: ERP</h4>
-              <p class="position-title">นักศึกษาฝึกงาน Software Developer</p>
-              <p class="mb-3">
-                ผู้ให้บริการด้านเทคโนโลยีและซอฟต์แวร์ ERP
-                สำหรับธุรกิจในประเทศไทย โดยเน้นกลุ่มลูกค้าที่เป็น SMEs
-              </p>
-              <div class="text-end">
-                <i class="fas fa-arrow-right"></i>
-              </div>
-            </a>
+            </div>
           </div>
-
-          <!-- Digic Technology -->
-          <div class="col-lg-4 col-md-6 mb-4">
-            <a href="assets/digix.html" class="portfolio-card">
-              <div class="company-icon">
-                <i class="fas fa-globe"></i>
+          <!-- Card 2 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <img
+                src="Varita.png"
+                onerror="this.src='Vithita Animation.png'"
+                class="card-img-top"
+                alt="Varita"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Varita</h5>
+                <p class="card-text text-secondary">
+                  เลย์เอาต์โทนสบายตา ใช้ยูทิลิตี้คลาสของ Bootstrap เท่านั้น
+                </p>
+                <a href="assets/Varita.html" class="btn btn-primary w-100"
+                  >ดูหน้าเพจ</a
+                >
               </div>
-              <h4 class="company-name">บริษัท ดิจิค เทคโนโลยี จำกัด</h4>
-              <p class="position-title">นักศึกษาฝึกงาน Web Developer</p>
-              <p class="mb-3">
-                บริษัทรับทำเว็บไซต์ที่มีสำนักงานอยู่ที่ขอนแก่น
-                เปิดรับนักศึกษาฝึกงาน
-              </p>
-              <div class="text-end">
-                <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <img
+                src="Absolute Management Solutions ERP.jfif"
+                class="card-img-top"
+                alt="Appsolute/ERP"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Appsolute ERP</h5>
+                <p class="card-text text-secondary">
+                  หน้าบริษัท/ระบบ ERP โชว์ข้อมูลอย่างกระชับและน่าเชื่อถือ
+                </p>
+                <a href="assets/Appsolute.html" class="btn btn-primary w-100"
+                  >ดูหน้าเพจ</a
+                >
               </div>
-            </a>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <img src="Aisun.jpg" class="card-img-top" alt="Portfolio" />
+              <div class="card-body">
+                <h5 class="card-title">My Portfolio</h5>
+                <p class="card-text text-secondary">
+                  รวมผลงานและโปรเจ็กต์ที่เคยทำ
+                </p>
+                <a href="assets/PortfolioMe.html" class="btn btn-primary w-100"
+                  >ดูหน้าเพจ</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Card 5 (Script Demo) -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body d-flex flex-column justify-content-between">
+                <div>
+                  <h5 class="card-title">สคริปต์ JavaScript</h5>
+                  <p class="card-text text-secondary">
+                    รวมฟังก์ชันสั้น ๆ สำหรับหน้าเว็บ (ไฟล์
+                    <code>script.js</code>)
+                  </p>
+                </div>
+                <a href="script.js" class="btn btn-outline-secondary w-100"
+                  >เปิดดูโค้ด</a
+                >
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="contact" class="footer">
+    <!-- CONTACT -->
+    <section id="contact" class="py-5">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h3 class="mb-4"><i class="fas fa-envelope"></i> ติดต่อฉัน</h3>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="contact-item justify-content-center">
-                  <i class="fas fa-envelope"></i>
-                  <a href="mailto:aisun095@gmail.com">aisun095@gmail.com</a>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="contact-item justify-content-center">
-                  <i class="fas fa-phone"></i>
-                  <a href="tel:0959161101">095-916-1101</a>
-                </div>
-              </div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-md-6">
-                <div class="contact-item justify-content-center">
-                  <i class="fab fa-github"></i>
-                  <a href="https://github.com/Aisun-Tu" target="_blank"
-                    >GitHub Profile</a
-                  >
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="contact-item justify-content-center">
-                  <i class="fab fa-facebook"></i>
-                  <a
-                    href="https://www.facebook.com/aisun.tungprasert/?locale=th_TH"
-                    target="_blank"
-                    >Facebook Profile</a
-                  >
-                </div>
-              </div>
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="fw-semibold mb-3">ติดต่อ</h2>
+            <p class="text-secondary">
+              พร้อมร่วมงานและรับคำปรึกษาเกี่ยวกับเว็บไซต์/ระบบ
+              หากสนใจพูดคุยรายละเอียด
+              ส่งอีเมลหรือดูผลงานเพิ่มเติมได้ตามลิงก์ด้านล่าง
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <a href="mailto:aisun095@gmail.com" class="btn btn-primary"
+                >Email</a
+              >
+              <button
+                type="button"
+                id="copyPhoneBtn"
+                class="btn btn-outline-secondary"
+              >
+                คัดลอกเบอร์
+              </button>
+              <a
+                href="https://github.com/Aisun-Tu"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-outline-secondary"
+                >GitHub</a
+              >
+              <a
+                href="https://www.facebook.com/aisun.tungprasert/?locale=th_TH"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-outline-secondary"
+                >Facebook</a
+              >
             </div>
           </div>
         </div>
-        <hr class="my-4" style="border-color: rgba(255, 255, 255, 0.2)" />
-        <div class="text-center">
-          <p>&copy; 2025 นายไอศูรย์ ตั้งประเสริฐ. All rights reserved.</p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-4 bg-white border-top">
+      <div
+        class="container d-flex flex-column flex-sm-row align-items-center justify-content-between gap-2"
+      >
+        <div class="small text-secondary">
+          © <span id="y"></span> Aisun. All rights reserved.
+        </div>
+        <div class="small">
+          <a href="#" class="text-decoration-none">นโยบายความเป็นส่วนตัว</a>
         </div>
       </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+      (function () {
+        const btn = document.getElementById("copyPhoneBtn");
+        if (btn) {
+          btn.addEventListener("click", async function () {
+            try {
+              await navigator.clipboard.writeText("095-916-1101");
+              alert("คัดลอกข้อความแล้ว: 095-916-1101");
+            } catch (e) {
+              // Fallback สำหรับเบราว์เซอร์เก่า
+              const ta = document.createElement("textarea");
+              ta.value = "095-916-1101";
+              document.body.appendChild(ta);
+              ta.select();
+              document.execCommand("copy");
+              document.body.removeChild(ta);
+              alert("คัดลอกข้อความแล้ว: 095-916-1101");
+            }
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
